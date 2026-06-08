@@ -73,30 +73,28 @@ function App() {
             {org.blog && <p>Website: <a href={org.blog} target="_blank" rel="noreferrer">{org.blog}</a></p>}
 
             <div style={{ display: "flex", gap: "40px", marginTop: "20px" }}>
-      
               <div>
                 <h4>Recent Repositories</h4>
                 <ul>
                   {org.repos.map((repo) => (
                     <li key={repo.id}>
                       <a href={repo.url} target="_blank" rel="noreferrer">{repo.name}</a> 
-                      <span>{repo.stars}</span>
+                      <span style={{ marginLeft: "5px" }}>{repo.stars}</span>
                     </li>
                   ))}
                 </ul>
               </div>
               <div>
-                <h4>Public Members</h4>
+                <h4>Members</h4>
                 <ul style={{ listStyleType: "none", padding: 0 }}>
                   {org.members.map((member) => (
                     <li key={member.id} style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "10px" }}>
-                      <img src={member.avatar} width="30" style={{ borderRadius: "50%" }} />
-                      <a href={member.url}>{member.username}</a>
+                      <img src={member.avatar} width="30" alt="member" style={{ borderRadius: "50%" }} />
+                      <a href={member.url} target="_blank" rel="noreferrer">{member.username}</a>
                     </li>
                   ))}
                 </ul>
               </div>
-
             </div>
           </div>
         )}
