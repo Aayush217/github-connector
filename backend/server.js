@@ -61,7 +61,7 @@ app.get("/api/github/org/:orgname", async (req, res) => {
 
   } catch (error) {
     if (error.response && error.response.status === 403) {
-      console.log(`Token blocked for ${orgname} (SAML SSO). Retrying anonymously...`);
+      console.log(`Token blocked, Retrying anonymously...`);
       
       try {
         const [orgRes, reposRes, membersRes] = await Promise.all([
